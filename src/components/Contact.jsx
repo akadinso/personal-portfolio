@@ -25,7 +25,7 @@ export default function Contact() {
 
     try {
       const res = await axios.post(
-        "backend/contact",
+        "/backend/contact",
         formData
       );
 
