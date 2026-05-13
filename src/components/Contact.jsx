@@ -25,7 +25,7 @@ export default function Contact() {
 
     try {
       const res = await axios.post(
-        "http://localhost:5000/contact",
+        "backend/contact",
         formData
       );
 
