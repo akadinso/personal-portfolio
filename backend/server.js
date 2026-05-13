@@ -8,7 +8,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-app.post("/contact", async (req, res) => {
+app.post("/server", async (req, res) => {
   const { name, email, message } = req.body;
 
   try {
