@@ -6,7 +6,10 @@
   "scripts": {
     "dev": "vite",
     "start": "node backend/server.js",
+<<<<<<< HEAD
     "test": "node --test",
+=======
+>>>>>>> b1bb3e6452cd0beec648c7a7f42d3dfc49a2ed05
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview"

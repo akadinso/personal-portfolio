@@ -25,7 +25,11 @@ export default function Contact() {
 
     try {
       const res = await axios.post(
+<<<<<<< HEAD
         "/api/contact",
+=======
+        "/backend/server",
+>>>>>>> b1bb3e6452cd0beec648c7a7f42d3dfc49a2ed05
         formData
       );
 
