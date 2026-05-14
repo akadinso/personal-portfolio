@@ -49,12 +49,4 @@ app.post("/server", async (req, res) => {
       message: error.message,
     });
   }
-<<<<<<< HEAD:api/contact.js
 };
-=======
-});
-
-app.listen(5000, () => {
-  console.log("Server running on port 5000");
-});
->>>>>>> b1bb3e6452cd0beec648c7a7f42d3dfc49a2ed05:backend/server.js
