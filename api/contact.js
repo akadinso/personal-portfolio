@@ -1,7 +1,6 @@
 const nodemailer = require("nodemailer");
 
-module.exports = async function handler(req, res) {
-  // Only allow POST requests
+export default async function handler(req, res) {
   if (req.method !== "POST") {
     return res.status(405).json({
       success: false,
@@ -12,7 +11,6 @@ module.exports = async function handler(req, res) {
   const { name, email, message } = req.body;
 
   try {
-    // Create transporter
     const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
@@ -21,24 +19,22 @@ module.exports = async function handler(req, res) {
       },
     });
 
-    // Send email
     await transporter.sendMail({
       from: process.env.EMAIL_USER,
-      replyTo: email,
       to: process.env.EMAIL_USER,
+      replyTo: email,
       subject: `Portfolio Contact from ${name}`,
       html: `
         <h2>New Contact Form Submission</h2>
         <p><strong>Name:</strong> ${name}</p>
         <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Message:</strong></p>
         <p>${message}</p>
       `,
     });
 
     return res.status(200).json({
       success: true,
-      message: "Message sent successfully!",
+      message: "Email sent",
     });
   } catch (error) {
     console.error(error);
@@ -48,4 +44,4 @@ module.exports = async function handler(req, res) {
       message: error.message,
     });
   }
-};
+}
