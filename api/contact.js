@@ -1,20 +1,18 @@
 const nodemailer = require("nodemailer");
 
 module.exports = async function handler(req, res) {
+  // Only allow POST requests
   if (req.method !== "POST") {
     return res.status(405).json({
+      success: false,
       message: "Method not allowed",
     });
   }
-  
 
-app.use(cors());
-app.use(express.json());
-
-app.post("/server", async (req, res) => {
   const { name, email, message } = req.body;
 
   try {
+    // Create transporter
     const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
@@ -23,6 +21,7 @@ app.post("/server", async (req, res) => {
       },
     });
 
+    // Send email
     await transporter.sendMail({
       from: process.env.EMAIL_USER,
       replyTo: email,
