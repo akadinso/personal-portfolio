@@ -1,7 +1,6 @@
 const nodemailer = require("nodemailer");
 
 module.exports = async function handler(req, res) {
-  // Only allow POST requests
   if (req.method !== "POST") {
     return res.status(405).json({
       success: false,
