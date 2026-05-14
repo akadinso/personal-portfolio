@@ -48,4 +48,8 @@ module.exports = async function handler(req, res) {
       message: error.message,
     });
   }
+<<<<<<< HEAD
 };
+=======
+};
+>>>>>>> 6143abbe307bdbf150f7b8dd66bec2e72075a23d
