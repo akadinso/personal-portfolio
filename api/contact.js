@@ -8,13 +8,10 @@ module.exports = async function handler(req, res) {
   }
   
 
-<<<<<<< HEAD:api/contact.js
-=======
 app.use(cors());
 app.use(express.json());
 
 app.post("/server", async (req, res) => {
->>>>>>> b1bb3e6452cd0beec648c7a7f42d3dfc49a2ed05:backend/server.js
   const { name, email, message } = req.body;
 
   try {
