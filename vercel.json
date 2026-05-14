@@ -4,7 +4,7 @@
             "routePrefix": "/",
             "framework": "vite"
         },
-        "backend": {
+        "api": {
             "entrypoint": "api",
             "routePrefix": "/_/api"
         }
